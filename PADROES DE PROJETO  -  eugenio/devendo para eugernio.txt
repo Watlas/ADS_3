@@ -1,4 +1,4 @@
-teplate - ordenação 
-adptar 	- adapter
-interar - INTEREITOR
-facktoru - factory
+s - ordenação 
+adapter 	- adapter
+ITERATOR - ITERATOR
+factory - factory
