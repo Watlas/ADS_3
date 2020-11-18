@@ -1,4 +1,4 @@
-s - ordenação 
+template - ordenação 
 adapter 	- adapter
 ITERATOR - ITERATOR
 factory - factory
