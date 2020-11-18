@@ -1,0 +1,36 @@
+srv-ubuntu é a maquina virtual
+[ 
+   - dentro do srv-ubuntu, tem:
+    - banco de dados postgreSQL 12
+    - programa WEB para administrar o banco (PgAdmin4)
+    - pasta compartilhada (pga-storage
+]
+
+tudo que tiver dentro do [srv-ubuntu] só funciona se a 
+máquina virtual estiver ligada.
+
+INSTRUÇÕES DE USO:
+1. Iniciar a máquina virtual; 
+2. Quando aparecer o prompt para login, pode minimizar a maquina virtual.
+3. Acessar o PgAdmin4 pela web. (O PgAdmin é o programa que está instalado na maquina virtual)
+   O PgAdmin4 é o programa utilizado para acessar o banco PostgreSql.
+   Endereço do PgAdmin4: 
+      http://srv-ubuntu/pgadmin4
+
+   O primeiro login após iniciar a máquina.
+
+   Usuário: watlasrick1@hotmail.com
+   Senha: voce-sabe qual é ... a senha do Bozonaro.
+
+
+
+
+ 
+
+
+
+********************* IMPORTANTE ********************
+* nunca salve um arquivo aaa.txt;                   *
+* dificilmente voce vai lembrar pra que ele serve;  *
+* com certeza vai apagar sem querer                 *
+********************* IMPORTANTE ********************

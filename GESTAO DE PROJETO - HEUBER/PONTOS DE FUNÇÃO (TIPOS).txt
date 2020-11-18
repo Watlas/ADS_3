@@ -1,0 +1,7 @@
+Ponto de função
+ALI - BOTÃO
+AIE - usar funcionalidade externa
+EE - Funcionalidades que mantêm os Arquivos Lógicos Internos (ALIs)
+ ou alteram o comportamento da aplicação.
+SE - CONSULTA VISIVEL PARA USUARIO COM TRATAMENTO
+CE - CONSULTA NO BANCO DADOS SEM TRATAMENTO

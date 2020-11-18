@@ -1,0 +1,21 @@
+--1
+	  SELECT f.fil_ano_lancamento, f.fil_titulo
+      FROM filmes f WHERE f.fil_ano_lancamento >= 2015
+	  --2
+	  SELECT ass.ass_nome, con.con_status
+	  FROM assinantes ass JOIN contratos con ON ass.ass_iden = con.con_iden
+	  WHERE con.con_status = 'AT'
+	  --3
+	  SELECT ass.ass_nome, pla.pla_nome, con.con_status
+	  FROM assinantes ass JOIN contratos con ON ass.ass_iden = con.con_iden
+	  					  JOIN planos pla    ON pla.pla_iden = con_pla_iden
+	  WHERE con.con_status = 'AT'
+	  --4
+	  SELECT fil.fil_titulo,dir.dir_nome
+	  FROM filmes fil JOIN filmes_diretores fdi ON fil_iden = fdi.fdi_fil_iden
+	  				  JOIN diretores dir ON dir_iden = fdi.fdi_dir_iden
+	  --5
+	  
+	  
+	  
+	  

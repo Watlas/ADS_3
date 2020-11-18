@@ -1,0 +1,6 @@
+PONTO DE FUNÇÃO
+Arquivo Lógico Interno (ALI)- repositorio de dados
+Arquivo de Interface Externa (AIE) - USAR FUNCIONALIDADE EXTERNA
+Entrada Externa (EE) - FUNCIONALIDADES QUE MANTÊM OS ARQUIVOS LÓGICOS INTERNOS (ALI) OU ALTERAM O COMPORTAMENTO DA APLICAÇÃO.
+Saída Externa (SE) - CONSULTA VISIVEL PARA USUARIO COM TRATAMENTO - com manipula/ Google Map
+Consulta Externa (CE) - CONSULTA NO BANCO DADOS SEM TRATAMENTO - sem manipula/ Google Map

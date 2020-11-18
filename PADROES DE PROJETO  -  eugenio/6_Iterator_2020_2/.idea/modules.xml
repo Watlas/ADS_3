@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/6_Iterator_2020_2.iml" filepath="$PROJECT_DIR$/.idea/6_Iterator_2020_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExemploEmJava/Iterator/ProjetoComIterator/ProjetoComIterator.iml" filepath="$PROJECT_DIR$/ExemploEmJava/Iterator/ProjetoComIterator/ProjetoComIterator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExemploEmJava/Iterator/ProjetoSemIterator/ProjetoSemIterator.iml" filepath="$PROJECT_DIR$/ExemploEmJava/Iterator/ProjetoSemIterator/ProjetoSemIterator.iml" />
+    </modules>
+  </component>
+</project>

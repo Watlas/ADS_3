@@ -1,0 +1,91 @@
+REATE TABLE cupons (
+  	cup_iden SERIAL PRIMARY KEY,
+	cup_porcentagem NUMERIC(7,2),
+	cup_data_geracao DATE
+);
+
+CREATE TABLE categorias(
+	cat_iden SERIAL PRIMARY KEY,
+	cat_nome VARCHAR
+);
+
+CREATE TABLE planos(
+	pla_iden SERIAL PRIMARY KEY,
+	pla_acesso_simultaneo INTEGER,
+	pla_nome VARCHAR,
+	pla_preco NUMERIC(7,2)
+);
+
+CREATE TABLE filmes (
+ 	fil_iden SERIAL PRIMARY KEY,
+	fil_sinopse VARCHAR,
+	fil_titulo VARCHAR,
+	fil_ano INTEGER
+);
+
+ALTER TABLE filmes ADD COLUMN fil_cat_iden INTEGER;
+ALTER TABLE filmes ADD FOREIGN KEY (fil_cat_iden) REFERENCES categorias (cat_iden);
+
+
+CREATE TABLE usuarios(
+	usu_iden SERIAL PRIMARY KEY,
+	usu_nome VARCHAR,
+	usu_cpf VARCHAR,
+	usu_email VARCHAR,
+	usu_senha VARCHAR,
+	usu_cup_iden INTEGER,
+	FOREIGN KEY (usu_cup_iden) REFERENCES cupons (cup_iden)
+);
+
+
+CREATE TABLE visualizados(
+	vis_iden SERIAL PRIMARY KEY,
+	vis_completo BOOLEAN,
+	vis_data_visualizacao DATE,
+	vis_usu_iden INTEGER,
+	vis_fil_iden INTEGER,
+	FOREIGN KEY (vis_usu_iden) REFERENCES usuarios (usu_iden),
+	FOREIGN KEY (vis_fil_iden) REFERENCES filmes (fil_iden)
+);
+
+CREATE TABLE contratos(
+	con_iden SERIAL PRIMARY KEY,
+	con_status VARCHAR,
+	con_inicio DATE,
+	con_fim DATE,
+	con_usu_iden INTEGER,
+	con_pla_iden INTEGER,
+	FOREIGN KEY (con_usu_iden) REFERENCES usuarios (usu_iden),
+	FOREIGN KEY (con_pla_iden) REFERENCES planos (pla_iden)
+);
+ 
+
+
+--2a)
+--  PREÇO:15
+--  PORCENTAGEM: 50
+--  15 - ((50/100) * 15) 
+SELECT u.usu_nome nome, c.cup_porcentagem porcentagem, p.pla_preco preco, (p.pla_preco - (c.cup_porcentagem/100 * p.pla_preco)) preco_final
+FROM usuarios u JOIN cupons c ON u.usu_cup_iden =  c.cup_iden
+		        JOIN contratos con ON con.con_usu_iden = u.usu_iden
+		        JOIN planos p ON con.con_pla_iden = p.pla_iden
+
+--2b)
+SELECT f.fil_ano,f.fil_titulo
+FROM visualizados vis JOIN usuarios u ON  vis.vis_usu_iden = u.usu_iden
+		              JOIN filmes f ON vis.vis_fil_iden = f.fil_iden
+WHERE 	u.usu_cpf = '004.054.555-77' AND vis.vis_completo = true;		  
+
+--2c)
+SELECT f.fil_titulo, c.cat_nome
+FROM filmes f JOIN categorias c ON f.fil_cat_iden = c.cat_iden 
+WHERE UPPER(f.fil_titulo) LIKE 'A%' AND  f.fil_ano = 2020
+ORDER BY f.fil_titulo 
+
+--2d)
+SELECT u.usu_nome, p.pla_nome 
+FROM usuarios u JOIN contratos c ON u.usu_iden = c.con_usu_iden
+		JOIN planos p ON c.con_pla_iden = p.pla_iden
+		JOIN visualizados v ON v.vis_usu_iden = u.usu_iden
+		JOIN filmes f ON v.vis_fil_iden = f.fil_iden
+WHERE UPPER(f.fil_titulo) = 'AVENGERS-ENDGAME'	;

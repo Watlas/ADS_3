@@ -1,0 +1,7 @@
+Watlas;1;2000.0;
+Sara ;2;5000.0;
+watlas;2;200.0;
+jose ;6;5000.0;
+XANDAO O ULTIMO HEROI DA TERRA;99;9999999.0;
+ana;9;1045.0;
+luana;65;500.0;
