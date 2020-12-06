@@ -9,7 +9,8 @@ package classes;
  *
  * @author watla
  */
-public class Cafetão implements Funcionario {
+public class Cafetão extends Funcionario {
+
 
     private double salario;
     private double horasTrabalhadas;

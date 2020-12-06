@@ -9,14 +9,23 @@ package classes;
  *
  * @author watla
  */
-public interface Funcionario {
+public class Funcionario {
 
-    public double getSalario();
+    public double getSalario(){
+       return 0;
+    };
 
-    public void setSalario(double salario);
+    public void setSalario(double salario){
 
-    public double getHorasTrabalhadas();
+    };
 
-    public void setHorasTrabalhadas(double horasTrabalhadas);
+
+    public double getHorasTrabalhadas(){
+        return 2;
+    };
+
+    public void setHorasTrabalhadas(double horasTrabalhadas){
+
+    };
 
 }

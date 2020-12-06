@@ -11,6 +11,8 @@ import classes.*;
 import javax.swing.table.DefaultTableModel;
 import persistencia.*;
 
+import java.util.Iterator;
+
 /**
  *
  * @author watla
@@ -25,6 +27,11 @@ public class Tela extends javax.swing.JFrame {
     public Tela() {
         initComponents();
         this.setLocationRelativeTo(null);
+        try {
+       //     atualizarGrid();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -77,7 +84,11 @@ public class Tela extends javax.swing.JFrame {
         jButtoneXECUTAR.setText("SOMA");
         jButtoneXECUTAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtoneXECUTARActionPerformed(evt);
+                try {
+                    jButtoneXECUTARActionPerformed(evt);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -153,7 +164,22 @@ public class Tela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtoneXECUTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoneXECUTARActionPerformed
+    private void atualizarGrid() throws Exception {
+        PessoaDal p = new PessoaDal();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        Iterator<Funcionario> list= p.getAll();
+        Object[] arrays;
+        for (Iterator<Funcionario> it = list; it.hasNext(); ) {
+            Funcionario y = it.next();
+            arrays = new Object[]{
+                  y.getSalario(),
+                  y.getHorasTrabalhadas()
+            };
+            model.addRow(arrays);
+        }
+    }
+
+    private void jButtoneXECUTARActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButtoneXECUTARActionPerformed
         String saida;
         SomaHoras somahoras = new SomaHoras();
         SomaSalario somasalario = new SomaSalario();
@@ -199,6 +225,7 @@ public class Tela extends javax.swing.JFrame {
             Object[] dados = {"CAFETÃO", somaHoras, somaSalario};
             model.addRow(dados);
         }
+     //   atualizarGrid();
         limpar();
     }//GEN-LAST:event_jButtoneXECUTARActionPerformed
 

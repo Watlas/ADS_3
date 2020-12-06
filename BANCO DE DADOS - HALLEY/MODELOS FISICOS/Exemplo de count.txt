@@ -21,6 +21,8 @@ GROUP BY voo_origem
 HAVING 
 ORDER BY voos.voo_origem
 
+SELECT * FROM voos
+WHERE VOO_DATA BETWEEM TO_DATE ('01/08/2020','dd/mm/yyyy') AND TO_DATE ('01/12/2020', 'dd/mm/yyyy')
 
 --AVG,MIN,MAX,SUM,COUNT
 SELECT voo_origem,  ROUND(AVG(voo_custo),2)
