@@ -1,4 +1,1 @@
-template - ordenação 
-adapter - adapter
-ITERATOR - ITERATOR
-factory - factory - OK
+adapter - adapter --<
